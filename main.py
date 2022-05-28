@@ -16,24 +16,27 @@ def find_anagrams(word1, word2):
     word1.sort()
     word2.sort()
 
-    print(word1)
-    print(word2)
 
     # check if both words have the same lenght
     if len(word1) == len(word2):
-        print("equal")
-    # for letter in word1:
-    #     print(letter)
        
-    #     similar_text = letter in word2
-    #     print(similar_text)
+        #check if all letters are similar
+        for letter in word1:
 
-    #     if validator == False:
-    #         print("not anagram")
+            # compare letters in word1 and word2 letter by letter 
+            similar_letters = letter in word2
+            if similar_letters == False:
+                return False #return False if a letter is different
+        
+        # return true if all letters are similar 
+        return True
 
-  
+    else:
+        #return False if one word has more characher than the other
+        return False
 
-    # return True 
+      
 
-find_anagrams("rat", "cat")
+
+print(find_anagrams("stop", "tops"))
 
